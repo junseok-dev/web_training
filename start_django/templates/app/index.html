@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        body { background-color: #050a14; color: white; font-family: 'Pretendard', sans-serif; }
+        .container { display: flex; gap: 20px; padding: 50px; justify-content: center; }
+        
+        /* FC 온라인 스타일 카드 */
+        .player-card {
+            width: 180px; height: 260px;
+            background: linear-gradient(135deg, #ffd700, #b8860b); /* 시즌별로 색상 변경 가능 */
+            border-radius: 5px; position: relative;
+            text-align: center; clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+        }
+        .ovr { font-size: 24px; font-weight: bold; position: absolute; top: 10px; left: 15px; }
+        .pos { position: absolute; top: 35px; left: 15px; font-size: 12px; }
+        .player-name { background: rgba(0,0,0,0.7); margin-top: 180px; padding: 5px; font-weight: bold; }
+    </style>
 </head>
 <body>
-    
+    <h1 style="text-align: center;">FC ONLINE CLONE</h1>
+    <div class="container">
+        {% for player in players %}
+        <div class="player-card">
+            <div class="ovr">{{ player.ovr }}</div>
+            <div class="pos">{{ player.position }}</div>
+            <div class="player-name">{{ player.name }}</div>
+            <div style="font-size: 10px;">{{ player.season }}</div>
+        </div>
+        {% empty %}
+        <p>등록된 선수가 없습니다. 관리자 페이지에서 추가해주세요!</p>
+        {% endfor %}
+    </div>
 </body>
 </html>

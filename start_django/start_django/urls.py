@@ -15,13 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-# 수정 필요
+# start_django/urls.py (메인 설정 파일)
 
 from django.contrib import admin
-from django.urls import path
-from django.views.generic import RedirectView
+from django.urls import path, include  # include를 반드시 추가하세요!
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('app/', include('app.urls')),
+    path('admin/', admin.site.urls), # 관리자 페이지 (기본 설정)
+    
+    # ''은 주소창에 아무것도 안 쳤을 때(홈) app의 urls.py를 보겠다는 뜻입니다.
+    path('', include('app.urls')), 
 ]

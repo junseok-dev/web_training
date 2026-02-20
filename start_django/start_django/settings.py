@@ -27,6 +27,27 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# start_django/settings.py
+
+import os # 상단에 이 줄이 없다면 추가해주세요.
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # DIRS를 아래와 같이 수정하여 최상위 templates 폴더를 인식하게 합니다.
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 
 # Application definition
 
