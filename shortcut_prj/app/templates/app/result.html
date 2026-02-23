@@ -2,43 +2,112 @@
 
 {% block extra_head %}
 <style>
-    .result-wrapper { max-width: 800px; margin: 40px auto; padding: 20px; color: #c9d1d9; }
-    .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
-    .title { font-size: 24px; font-weight: bold; color: #238636; margin-bottom: 10px; }
-    .label { color: #8b949e; font-size: 14px; margin-bottom: 5px; }
-    .score { font-size: 40px; font-weight: 800; color: #2ea043; }
-    .risk-badge { display: inline-block; padding: 5px 12px; border-radius: 20px; font-weight: bold; }
-    .risk-high { background: #442326; color: #ff7b72; }
-    .risk-low { background: #23392b; color: #7ee787; }
+    :root {
+        --bg-darker: #0d1117;
+        --accent-glow: rgba(46, 160, 67, 0.15);
+    }
+    .result-wrapper { max-width: 1000px; margin: 50px auto; padding: 0 20px; animation: fadeIn 0.8s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* 헤더 카드 */
+    .report-header {
+        background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 40px;
+        margin-bottom: 30px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .idea-tag { background: var(--accent-glow); color: var(--accent-green); padding: 8px 16px; border-radius: 50px; font-size: 14px; font-weight: 600; display: inline-block; margin-bottom: 20px; }
+    
+    /* 분석 그리드 */
+    .analysis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 30px; }
+    .status-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 30px;
+        transition: transform 0.3s;
+    }
+    .status-card:hover { transform: translateY(-5px); border-color: var(--accent-green); }
+
+    /* 점수 시각화 */
+    .score-value { font-size: 56px; font-weight: 900; color: var(--accent-green); margin: 10px 0; }
+    .risk-indicator { height: 12px; background: #30363d; border-radius: 6px; overflow: hidden; margin: 20px 0; }
+    .risk-bar { height: 100%; border-radius: 6px; transition: width 1s ease-in-out; }
+    .high { background: #ff7b72; width: 85%; }
+    .low { background: #7ee787; width: 25%; }
+
+    /* 회피 전략 섹션 */
+    .strategy-section {
+        background: #161b22;
+        border-left: 5px solid var(--accent-green);
+        border-radius: 12px;
+        padding: 35px;
+        line-height: 1.8;
+    }
+    .step-item { display: flex; align-items: flex-start; margin-bottom: 15px; }
+    .step-number { background: var(--accent-green); color: #0d1117; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; margin-right: 15px; flex-shrink: 0; margin-top: 5px; }
+    
+    .btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 40px; }
+    .action-btn { padding: 12px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: 0.2s; }
+    .btn-primary { background: var(--accent-green); color: #0d1117; }
+    .btn-secondary { border: 1px solid var(--border-color); color: white; }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="result-wrapper">
-    <div class="card">
-        <div class="title">분석 완료</div>
-        <div class="label">입력하신 아이디어:</div>
-        <p style="font-size: 18px;">{{ idea }}</p>
+    <div class="report-header">
+        <span class="idea-tag">AI Patent Analysis</span>
+        <h1 style="font-size: 32px; margin-bottom: 15px;">아이디어 분석 리포트</h1>
+        <p style="color: var(--text-muted); font-size: 18px; max-width: 600px; margin: 0 auto;">
+            "{{ idea }}"
+        </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-        <div class="card" style="text-align: center;">
-            <div class="label">유사도 점수</div>
-            <div class="score">{{ result.similarity.score }}%</div>
+    <div class="analysis-grid">
+        <div class="status-card">
+            <h3 style="color: var(--text-muted); font-size: 16px;">특허 유사성 점수</h3>
+            <div class="score-value">{{ result.similarity.score }}%</div>
+            <p style="font-size: 14px;">기존 특허들과의 기술적 구성 및 목적이 {{ result.similarity.score }}% 일치합니다.</p>
         </div>
-        <div class="card" style="text-align: center;">
-            <div class="label">침해 리스크</div>
-            <div class="risk-badge {% if result.infringement.risk_level == '높음' %}risk-high{% else %}risk-low{% endif %}" style="margin-top: 15px;">
+
+        <div class="status-card">
+            <h3 style="color: var(--text-muted); font-size: 16px;">침해 위험도 분석</h3>
+            <div class="score-value" style="color: {% if result.infringement.risk_level == '높음' %}#ff7b72{% else %}#7ee787{% endif %};">
                 {{ result.infringement.risk_level }}
             </div>
+            <div class="risk-indicator">
+                <div class="risk-bar {% if result.infringement.risk_level == '높음' %}high{% else %}low{% endif %}"></div>
+            </div>
+            <p style="font-size: 14px;">주요 구성 요소가 선행 특허의 권리 범위에 포함될 가능성이 {{ result.infringement.risk_level }} 상태입니다.</p>
         </div>
     </div>
 
-    <div class="card">
-        <div class="label">AI 회피 전략 제언</div>
-        <p style="line-height: 1.6;">{{ result.avoidance.summary }}</p>
+    <div class="strategy-section">
+        <h2 style="margin-top: 0; margin-bottom: 25px; display: flex; align-items: center;">
+            <i class="fas fa-lightbulb" style="color: var(--accent-green); margin-right: 15px;"></i>
+            전문가 회피 전략 제언
+        </h2>
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <div><strong>차별화 포인트 강화:</strong> {{ result.avoidance.summary }}</div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <div><strong>구성 요소 분리:</strong> 선행 특허의 핵심 청구항과 겹치는 물리적 결합 방식을 소프트웨어적 제어 방식으로 전환할 것을 권장합니다.</div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <div><strong>신규성 확보:</strong> 기존 방식에는 없는 '사용자 맞춤형 피드백 루프'를 추가하여 독자적인 기술적 진보성을 확보하세요.</div>
+        </div>
     </div>
 
-    <a href="{% url 'home' %}" style="display: block; text-align: center; color: #8b949e; text-decoration: none;">← 처음으로 돌아가기</a>
+    <div class="btn-group">
+        <a href="{% url 'home' %}" class="action-btn btn-secondary">다시 분석하기</a>
+        <a href="#" onclick="window.print();" class="action-btn btn-primary">PDF 리포트 저장</a>
+    </div>
 </div>
 {% endblock %}
