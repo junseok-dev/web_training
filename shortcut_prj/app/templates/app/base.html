@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short-Cut | Patent AI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --bg-dark: #0d1117;
+            --sidebar-bg: #161b22;
+            --card-bg: #21262d;
+            --accent-green: #238636;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- Sidebar Style --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s;
+        }
+
+        .sidebar-header {
+            padding: 24px;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--accent-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .new-chat-btn {
+            margin: 0 15px 20px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+
+        .new-chat-btn:hover { background: #30363d; }
+
+        .history-section {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 15px;
+        }
+
+        .history-title {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+
+        .history-item {
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--text-main);
+            text-decoration: none;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 5px;
+        }
+
+        .history-item:hover { background: var(--card-bg); }
+
+        .sidebar-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        /* --- Main Content Style --- */
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        header {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .content-area {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .auth-link {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 15px;
+        }
+
+        .auth-link:hover { color: var(--accent-green); }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #484f58; border-radius: 10px; }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-bolt"></i> Short-Cut
+        </div>
+        
+        <a href="{% url 'home' %}" class="new-chat-btn">
+            <i class="fas fa-plus"></i> 새 분석 시작
+        </a>
+
+        <div class="history-section">
+            <div class="history-title">최근 분석 기록</div>
+            {% if history %}
+                {% for item in history %}
+                    <a href="#" class="history-item"><i class="far fa-comment-alt"></i> {{ item.idea_summary }}</a>
+                {% endfor %}
+            {% else %}
+                <div style="font-size: 12px; color: var(--text-muted); padding-left: 5px;">기록이 없습니다.</div>
+            {% endif %}
+        </div>
+
+        <div class="sidebar-footer">
+            {% if user.is_authenticated %}
+                <div class="user-info">
+                    <i class="fas fa-user-circle" style="font-size: 20px;"></i>
+                    <span>{{ user.username }}님</span>
+                    <a href="{% url 'logout' %}" class="auth-link" style="color: #f85149;"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            {% else %}
+                <a href="{% url 'login' %}" class="menu-item auth-link"><i class="fas fa-sign-in-alt"></i> 로그인 하세요</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="main-container">
+        <header>
+            {% if not user.is_authenticated %}
+                <a href="{% url 'signup' %}" class="auth-link">회원가입</a>
+                <a href="{% url 'login' %}" class="auth-link">로그인</a>
+            {% endif %}
+        </header>
+
+        <div class="content-area">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+</body>
+</html>

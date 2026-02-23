@@ -1,0 +1,571 @@
+2026-02-02 16:18:55,728 | WARNING | src.preprocessor | Spacy model 'en_core_web_sm' not found. Install with: python -m spacy download en_core_web_sm
+2026-02-02 16:19:09,885 | INFO | src.preprocessor | Saved 10000 processed patents to: C:\Workspaces\SKN22-3rd-2Team\src\data\processed\processed_patents_10k.json
+2026-02-02 16:21:44,803 | INFO | src.embedder | OpenAI Embedder initialized with model: text-embedding-3-small
+2026-02-02 16:21:45,962 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:46,924 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:47,939 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:48,622 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:50,505 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:51,604 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:52,620 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:53,330 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:53,997 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:55,207 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:55,949 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:56,926 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:57,989 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:58,616 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:59,245 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:21:59,830 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:00,925 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:01,880 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:02,827 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:04,107 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:05,024 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:05,811 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:07,508 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:08,116 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:09,148 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:11,017 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:11,757 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:12,504 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:13,505 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:14,189 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:15,120 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:15,764 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:16,831 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:17,477 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:18,174 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:19,181 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:19,917 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:20,639 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:21,878 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:22,816 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:23,474 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:24,180 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:25,118 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:26,711 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:27,412 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:28,488 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:29,167 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:30,134 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:31,374 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:32,390 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:33,138 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:35,948 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:36,821 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:37,789 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:38,504 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:39,479 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:40,100 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:40,650 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:41,282 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:42,313 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:42,996 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:43,330 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:22:43,330 | INFO | openai._base_client | Retrying request to /embeddings in 1.032000 seconds
+2026-02-02 16:22:44,554 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:22:44,554 | INFO | openai._base_client | Retrying request to /embeddings in 1.673000 seconds
+2026-02-02 16:22:46,898 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:47,814 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:48,162 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:22:48,162 | INFO | openai._base_client | Retrying request to /embeddings in 1.867000 seconds
+2026-02-02 16:22:50,526 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:50,858 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:22:50,858 | INFO | openai._base_client | Retrying request to /embeddings in 1.397000 seconds
+2026-02-02 16:22:52,823 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:53,156 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:22:53,156 | INFO | openai._base_client | Retrying request to /embeddings in 1.362000 seconds
+2026-02-02 16:22:55,194 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:55,778 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:22:55,778 | INFO | openai._base_client | Retrying request to /embeddings in 0.569000 seconds
+2026-02-02 16:22:57,180 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:22:57,528 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:22:57,530 | INFO | openai._base_client | Retrying request to /embeddings in 1.447000 seconds
+2026-02-02 16:22:59,812 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:00,169 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:00,169 | INFO | openai._base_client | Retrying request to /embeddings in 1.546000 seconds
+2026-02-02 16:23:02,898 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:03,249 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:03,249 | INFO | openai._base_client | Retrying request to /embeddings in 0.303000 seconds
+2026-02-02 16:23:03,986 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:04,322 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:04,322 | INFO | openai._base_client | Retrying request to /embeddings in 1.192000 seconds
+2026-02-02 16:23:06,090 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:07,428 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:07,779 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:07,779 | INFO | openai._base_client | Retrying request to /embeddings in 1.734000 seconds
+2026-02-02 16:23:10,066 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:10,443 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:10,449 | INFO | openai._base_client | Retrying request to /embeddings in 1.312000 seconds
+2026-02-02 16:23:12,808 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:13,169 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:13,169 | INFO | openai._base_client | Retrying request to /embeddings in 0.572000 seconds
+2026-02-02 16:23:14,611 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:15,638 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:15,957 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:15,957 | INFO | openai._base_client | Retrying request to /embeddings in 2.236000 seconds
+2026-02-02 16:23:19,125 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:19,614 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:19,614 | INFO | openai._base_client | Retrying request to /embeddings in 0.947000 seconds
+2026-02-02 16:23:21,383 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:21,719 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:21,719 | INFO | openai._base_client | Retrying request to /embeddings in 0.868000 seconds
+2026-02-02 16:23:23,259 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:23,611 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:23,612 | INFO | openai._base_client | Retrying request to /embeddings in 1.066000 seconds
+2026-02-02 16:23:26,285 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:26,620 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:26,621 | INFO | openai._base_client | Retrying request to /embeddings in 0.004000 seconds
+2026-02-02 16:23:27,385 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:28,480 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:28,829 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:28,832 | INFO | openai._base_client | Retrying request to /embeddings in 1.430000 seconds
+2026-02-02 16:23:30,860 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:31,560 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:31,919 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:31,920 | INFO | openai._base_client | Retrying request to /embeddings in 0.787000 seconds
+2026-02-02 16:23:32,908 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:32,910 | INFO | openai._base_client | Retrying request to /embeddings in 1.680000 seconds
+2026-02-02 16:23:35,500 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:35,829 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:35,843 | INFO | openai._base_client | Retrying request to /embeddings in 0.801000 seconds
+2026-02-02 16:23:37,309 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:37,659 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:37,659 | INFO | openai._base_client | Retrying request to /embeddings in 1.526000 seconds
+2026-02-02 16:23:39,759 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:40,088 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:40,088 | INFO | openai._base_client | Retrying request to /embeddings in 1.614000 seconds
+2026-02-02 16:23:42,557 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:42,885 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:42,885 | INFO | openai._base_client | Retrying request to /embeddings in 1.543000 seconds
+2026-02-02 16:23:45,787 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:46,136 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:46,136 | INFO | openai._base_client | Retrying request to /embeddings in 0.893000 seconds
+2026-02-02 16:23:48,371 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:48,718 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:48,718 | INFO | openai._base_client | Retrying request to /embeddings in 0.368000 seconds
+2026-02-02 16:23:49,925 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:50,283 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:50,286 | INFO | openai._base_client | Retrying request to /embeddings in 0.844000 seconds
+2026-02-02 16:23:52,101 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:52,431 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:52,431 | INFO | openai._base_client | Retrying request to /embeddings in 0.522000 seconds
+2026-02-02 16:23:53,780 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:54,765 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:55,113 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:55,113 | INFO | openai._base_client | Retrying request to /embeddings in 1.373000 seconds
+2026-02-02 16:23:57,380 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:57,726 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:57,727 | INFO | openai._base_client | Retrying request to /embeddings in 0.922000 seconds
+2026-02-02 16:23:59,560 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:23:59,880 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:23:59,880 | INFO | openai._base_client | Retrying request to /embeddings in 0.796000 seconds
+2026-02-02 16:24:01,501 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:01,859 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:01,859 | INFO | openai._base_client | Retrying request to /embeddings in 1.425000 seconds
+2026-02-02 16:24:03,898 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:04,962 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:05,289 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:05,289 | INFO | openai._base_client | Retrying request to /embeddings in 2.554000 seconds
+2026-02-02 16:24:08,053 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:08,053 | INFO | openai._base_client | Retrying request to /embeddings in 0.454000 seconds
+2026-02-02 16:24:09,401 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:09,817 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:09,817 | INFO | openai._base_client | Retrying request to /embeddings in 1.008000 seconds
+2026-02-02 16:24:11,784 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:12,116 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:12,116 | INFO | openai._base_client | Retrying request to /embeddings in 0.521000 seconds
+2026-02-02 16:24:13,131 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:13,483 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:13,483 | INFO | openai._base_client | Retrying request to /embeddings in 1.016000 seconds
+2026-02-02 16:24:14,965 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:15,315 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:15,315 | INFO | openai._base_client | Retrying request to /embeddings in 1.027000 seconds
+2026-02-02 16:24:17,079 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:17,430 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:17,430 | INFO | openai._base_client | Retrying request to /embeddings in 0.737000 seconds
+2026-02-02 16:24:18,743 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:19,079 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:19,079 | INFO | openai._base_client | Retrying request to /embeddings in 0.958000 seconds
+2026-02-02 16:24:20,441 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:20,794 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:20,794 | INFO | openai._base_client | Retrying request to /embeddings in 1.358000 seconds
+2026-02-02 16:24:23,148 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:23,492 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:23,492 | INFO | openai._base_client | Retrying request to /embeddings in 1.215000 seconds
+2026-02-02 16:24:25,139 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:25,461 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:25,461 | INFO | openai._base_client | Retrying request to /embeddings in 1.463000 seconds
+2026-02-02 16:24:27,754 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:28,205 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:28,205 | INFO | openai._base_client | Retrying request to /embeddings in 0.866000 seconds
+2026-02-02 16:24:30,010 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:30,370 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:30,370 | INFO | openai._base_client | Retrying request to /embeddings in 0.977000 seconds
+2026-02-02 16:24:32,241 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:32,602 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:32,602 | INFO | openai._base_client | Retrying request to /embeddings in 0.756000 seconds
+2026-02-02 16:24:33,860 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:34,536 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:34,885 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:34,885 | INFO | openai._base_client | Retrying request to /embeddings in 0.367000 seconds
+2026-02-02 16:24:35,434 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:35,434 | INFO | openai._base_client | Retrying request to /embeddings in 1.821000 seconds
+2026-02-02 16:24:37,785 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:38,134 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:38,134 | INFO | openai._base_client | Retrying request to /embeddings in 1.009000 seconds
+2026-02-02 16:24:39,928 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:40,621 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:40,947 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:40,947 | INFO | openai._base_client | Retrying request to /embeddings in 2.278000 seconds
+2026-02-02 16:24:43,412 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:43,428 | INFO | openai._base_client | Retrying request to /embeddings in 0.241000 seconds
+2026-02-02 16:24:44,384 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:44,745 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:44,745 | INFO | openai._base_client | Retrying request to /embeddings in 1.159000 seconds
+2026-02-02 16:24:46,435 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:46,811 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:46,811 | INFO | openai._base_client | Retrying request to /embeddings in 1.933000 seconds
+2026-02-02 16:24:49,194 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:49,557 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:49,557 | INFO | openai._base_client | Retrying request to /embeddings in 1.381000 seconds
+2026-02-02 16:24:51,828 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:52,189 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:52,189 | INFO | openai._base_client | Retrying request to /embeddings in 0.661000 seconds
+2026-02-02 16:24:53,734 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:54,077 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:54,077 | INFO | openai._base_client | Retrying request to /embeddings in 0.816000 seconds
+2026-02-02 16:24:55,849 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:56,187 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:56,187 | INFO | openai._base_client | Retrying request to /embeddings in 0.536000 seconds
+2026-02-02 16:24:57,591 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:58,739 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:24:59,084 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:24:59,085 | INFO | openai._base_client | Retrying request to /embeddings in 1.650000 seconds
+2026-02-02 16:25:01,481 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:02,772 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:03,650 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:03,990 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:03,997 | INFO | openai._base_client | Retrying request to /embeddings in 2.039000 seconds
+2026-02-02 16:25:06,214 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:06,214 | INFO | openai._base_client | Retrying request to /embeddings in 0.930000 seconds
+2026-02-02 16:25:08,042 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:08,398 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:08,398 | INFO | openai._base_client | Retrying request to /embeddings in 0.968000 seconds
+2026-02-02 16:25:10,173 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:10,530 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:10,530 | INFO | openai._base_client | Retrying request to /embeddings in 0.937000 seconds
+2026-02-02 16:25:12,223 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:12,616 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:12,617 | INFO | openai._base_client | Retrying request to /embeddings in 0.913000 seconds
+2026-02-02 16:25:14,093 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:14,808 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:15,123 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:15,125 | INFO | openai._base_client | Retrying request to /embeddings in 0.191000 seconds
+2026-02-02 16:25:15,493 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:15,508 | INFO | openai._base_client | Retrying request to /embeddings in 1.534000 seconds
+2026-02-02 16:25:17,663 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:18,692 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:19,042 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:19,044 | INFO | openai._base_client | Retrying request to /embeddings in 2.094000 seconds
+2026-02-02 16:25:21,687 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:22,129 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:22,129 | INFO | openai._base_client | Retrying request to /embeddings in 1.248000 seconds
+2026-02-02 16:25:24,250 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:24,964 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:25,323 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:25,324 | INFO | openai._base_client | Retrying request to /embeddings in 0.333000 seconds
+2026-02-02 16:25:26,190 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:26,564 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:26,564 | INFO | openai._base_client | Retrying request to /embeddings in 2.487000 seconds
+2026-02-02 16:25:29,241 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:29,241 | INFO | openai._base_client | Retrying request to /embeddings in 1.276000 seconds
+2026-02-02 16:25:31,403 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:32,363 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:32,727 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:32,727 | INFO | openai._base_client | Retrying request to /embeddings in 2.084000 seconds
+2026-02-02 16:25:35,637 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:35,960 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:35,960 | INFO | openai._base_client | Retrying request to /embeddings in 0.705000 seconds
+2026-02-02 16:25:37,153 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:37,527 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:37,528 | INFO | openai._base_client | Retrying request to /embeddings in 1.105000 seconds
+2026-02-02 16:25:40,525 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:41,655 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:42,005 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:42,005 | INFO | openai._base_client | Retrying request to /embeddings in 0.492000 seconds
+2026-02-02 16:25:43,226 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:43,599 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:43,601 | INFO | openai._base_client | Retrying request to /embeddings in 1.009000 seconds
+2026-02-02 16:25:45,435 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:45,787 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:45,788 | INFO | openai._base_client | Retrying request to /embeddings in 0.869000 seconds
+2026-02-02 16:25:47,166 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:48,441 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:48,852 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:48,852 | INFO | openai._base_client | Retrying request to /embeddings in 2.121000 seconds
+2026-02-02 16:25:51,429 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:52,680 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:53,030 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:53,030 | INFO | openai._base_client | Retrying request to /embeddings in 2.100000 seconds
+2026-02-02 16:25:55,320 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:55,320 | INFO | openai._base_client | Retrying request to /embeddings in 0.226000 seconds
+2026-02-02 16:25:56,365 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:56,694 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:56,694 | INFO | openai._base_client | Retrying request to /embeddings in 0.648000 seconds
+2026-02-02 16:25:58,213 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:58,826 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:25:59,192 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:25:59,207 | INFO | openai._base_client | Retrying request to /embeddings in 1.752000 seconds
+2026-02-02 16:26:01,728 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:03,280 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:03,622 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:03,638 | INFO | openai._base_client | Retrying request to /embeddings in 1.402000 seconds
+2026-02-02 16:26:05,588 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:05,961 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:05,961 | INFO | openai._base_client | Retrying request to /embeddings in 1.753000 seconds
+2026-02-02 16:26:08,933 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:09,251 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:09,251 | INFO | openai._base_client | Retrying request to /embeddings in 0.416000 seconds
+2026-02-02 16:26:10,500 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:10,850 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:10,850 | INFO | openai._base_client | Retrying request to /embeddings in 0.974000 seconds
+2026-02-02 16:26:12,273 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:12,616 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:12,616 | INFO | openai._base_client | Retrying request to /embeddings in 1.217000 seconds
+2026-02-02 16:26:14,730 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:15,048 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:15,048 | INFO | openai._base_client | Retrying request to /embeddings in 0.805000 seconds
+2026-02-02 16:26:16,361 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:16,680 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:16,680 | INFO | openai._base_client | Retrying request to /embeddings in 0.972000 seconds
+2026-02-02 16:26:18,200 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:20,011 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:20,344 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:20,344 | INFO | openai._base_client | Retrying request to /embeddings in 1.108000 seconds
+2026-02-02 16:26:22,318 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:22,659 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:22,659 | INFO | openai._base_client | Retrying request to /embeddings in 0.653000 seconds
+2026-02-02 16:26:23,820 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:24,141 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:24,141 | INFO | openai._base_client | Retrying request to /embeddings in 1.260000 seconds
+2026-02-02 16:26:26,159 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:26,507 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:26,507 | INFO | openai._base_client | Retrying request to /embeddings in 1.208000 seconds
+2026-02-02 16:26:28,521 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:29,511 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:29,879 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:29,880 | INFO | openai._base_client | Retrying request to /embeddings in 2.101000 seconds
+2026-02-02 16:26:32,154 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:32,170 | INFO | openai._base_client | Retrying request to /embeddings in 0.053000 seconds
+2026-02-02 16:26:32,754 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:33,085 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:33,085 | INFO | openai._base_client | Retrying request to /embeddings in 1.216000 seconds
+2026-02-02 16:26:35,303 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:35,663 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:35,663 | INFO | openai._base_client | Retrying request to /embeddings in 0.420000 seconds
+2026-02-02 16:26:36,648 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:37,498 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:37,895 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:37,895 | INFO | openai._base_client | Retrying request to /embeddings in 1.768000 seconds
+2026-02-02 16:26:40,147 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:41,049 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:41,399 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:41,400 | INFO | openai._base_client | Retrying request to /embeddings in 2.173000 seconds
+2026-02-02 16:26:43,745 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:43,745 | INFO | openai._base_client | Retrying request to /embeddings in 0.087000 seconds
+2026-02-02 16:26:44,394 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:44,742 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:44,742 | INFO | openai._base_client | Retrying request to /embeddings in 1.241000 seconds
+2026-02-02 16:26:46,926 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:47,369 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:47,369 | INFO | openai._base_client | Retrying request to /embeddings in 1.841000 seconds
+2026-02-02 16:26:49,882 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:50,787 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:51,141 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:51,141 | INFO | openai._base_client | Retrying request to /embeddings in 2.317000 seconds
+2026-02-02 16:26:54,582 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:54,922 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:54,923 | INFO | openai._base_client | Retrying request to /embeddings in 0.760000 seconds
+2026-02-02 16:26:56,536 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:56,869 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:56,869 | INFO | openai._base_client | Retrying request to /embeddings in 0.848000 seconds
+2026-02-02 16:26:58,605 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:26:59,022 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:26:59,037 | INFO | openai._base_client | Retrying request to /embeddings in 0.512000 seconds
+2026-02-02 16:27:00,036 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:00,769 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:01,119 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:01,119 | INFO | openai._base_client | Retrying request to /embeddings in 3.078000 seconds
+2026-02-02 16:27:04,383 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:04,383 | INFO | openai._base_client | Retrying request to /embeddings in 0.438000 seconds
+2026-02-02 16:27:05,533 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:05,899 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:05,899 | INFO | openai._base_client | Retrying request to /embeddings in 0.831000 seconds
+2026-02-02 16:27:07,465 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:07,830 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:07,834 | INFO | openai._base_client | Retrying request to /embeddings in 0.914000 seconds
+2026-02-02 16:27:09,696 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:10,062 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:10,062 | INFO | openai._base_client | Retrying request to /embeddings in 1.087000 seconds
+2026-02-02 16:27:11,661 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:11,995 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:11,995 | INFO | openai._base_client | Retrying request to /embeddings in 1.359000 seconds
+2026-02-02 16:27:14,060 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:14,409 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:14,409 | INFO | openai._base_client | Retrying request to /embeddings in 1.342000 seconds
+2026-02-02 16:27:16,291 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:17,023 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:17,354 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:17,357 | INFO | openai._base_client | Retrying request to /embeddings in 0.536000 seconds
+2026-02-02 16:27:18,124 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:18,124 | INFO | openai._base_client | Retrying request to /embeddings in 2.128000 seconds
+2026-02-02 16:27:20,438 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:20,438 | ERROR | src.embedder | Batch embedding failed: Error code: 429 - {'error': {'message': 'Rate limit reached for text-embedding-3-small in organization org-Sf6yZ2H9DSdPsRtoiTh6Eqhf on tokens per min (TPM): Limit 1000000, Used 965490, Requested 35472. Please try again in 57ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-02-02 16:27:21,038 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:21,687 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:22,008 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:22,008 | INFO | openai._base_client | Retrying request to /embeddings in 1.678000 seconds
+2026-02-02 16:27:24,352 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:25,618 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:26,850 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:27,244 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:27,245 | INFO | openai._base_client | Retrying request to /embeddings in 2.413000 seconds
+2026-02-02 16:27:29,849 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:29,849 | INFO | openai._base_client | Retrying request to /embeddings in 0.993000 seconds
+2026-02-02 16:27:31,364 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:32,596 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:32,946 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:32,946 | INFO | openai._base_client | Retrying request to /embeddings in 2.182000 seconds
+2026-02-02 16:27:36,760 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:37,593 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:38,259 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:38,959 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:38,959 | INFO | openai._base_client | Retrying request to /embeddings in 1.572000 seconds
+2026-02-02 16:27:42,023 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:44,155 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:45,154 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:45,504 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:45,504 | INFO | openai._base_client | Retrying request to /embeddings in 0.961000 seconds
+2026-02-02 16:27:47,320 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:47,653 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:47,653 | INFO | openai._base_client | Retrying request to /embeddings in 1.018000 seconds
+2026-02-02 16:27:49,325 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:50,267 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:27:50,618 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:50,618 | INFO | openai._base_client | Retrying request to /embeddings in 0.818000 seconds
+2026-02-02 16:27:51,614 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-02-02 16:27:51,616 | INFO | openai._base_client | Retrying request to /embeddings in 0.076000 seconds
+2026-02-02 16:27:52,233 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-02 16:28:59,969 | INFO | src.vector_db | Initialized default BM25Encoder (will need fitting)
+2026-02-02 16:28:59,969 | INFO | src.vector_db | Pinecone Client initialized (index=patent-guard-hybrid)
+2026-02-02 16:28:59,969 | INFO | src.vector_db | Upserting 20740 vectors to Pinecone (batch_size=100)...
+2026-02-02 16:39:06,497 | ERROR | src.vector_db | Pinecone upsert failed at batch 19000: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 02 Feb 2026 07:39:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '146', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '362', 'x-pinecone-request-id': '8324454493337510274', 'x-envoy-upstream-service-time': '6', 'x-pinecone-response-duration-ms': '376', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Dense vectors must contain at least one non-zero value. Vector ID 'US-12293414-B1_claim_1' contains only zeros","details":[]}
+
+2026-02-03 10:20:00,679 | INFO | src.self_rag_generator | Found 100 citation pairs for analysis
+2026-02-03 10:20:00,776 | INFO | src.self_rag_generator | Initialized OpenAI client with model: gpt-4o-mini
+2026-02-03 10:20:09,895 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:20:14,668 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:20:19,565 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:20:27,012 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:20:32,117 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:20:42,246 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:20:51,295 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:20:56,368 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:21:04,810 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:21:13,785 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:21:21,227 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:21:25,912 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:21:34,267 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:21:42,535 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:21:49,046 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:21:57,763 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:04,695 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:10,615 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:16,365 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:22,549 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:27,459 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:31,869 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:39,783 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:44,193 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:48,506 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:54,189 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:22:58,217 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:03,181 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:10,146 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:16,642 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:23,353 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:27,091 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:33,521 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:37,893 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:45,070 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:49,130 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:52,791 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:23:57,014 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:01,028 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:10,965 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:17,238 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:21,726 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:25,094 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:32,462 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:36,550 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:41,266 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:46,051 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:24:53,875 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:02,043 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:05,750 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:11,383 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:16,917 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:24,173 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:28,576 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:33,985 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:40,843 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:44,692 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:48,372 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:52,651 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:25:57,185 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:01,027 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:05,735 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:11,088 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:15,206 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:19,543 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:25,717 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:32,075 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:35,356 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:41,756 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:48,007 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:26:55,868 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:27:03,976 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:27:11,366 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:27:17,230 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:27:26,130 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:27:30,329 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:27:34,456 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:27:40,985 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:27:49,361 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:27:55,712 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:28:02,879 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:28:07,266 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:28:11,385 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:28:19,128 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:28:27,003 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:28:34,337 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:28:40,584 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:28:47,598 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:28:52,212 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:29:02,269 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:29:10,907 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:29:20,692 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:29:27,638 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:29:33,618 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:29:38,665 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:29:46,188 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:29:53,266 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:29:59,647 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:30:06,492 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:30:14,932 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-03 10:30:15,473 | INFO | src.self_rag_generator | Saved 100 training samples to: C:\Workspaces\SKN22-3rd-2Team\src\data\processed\selfrag_training_20260203_102000.json

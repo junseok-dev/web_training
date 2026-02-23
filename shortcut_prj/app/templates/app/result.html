@@ -1,0 +1,44 @@
+{% extends 'app/base.html' %}
+
+{% block extra_head %}
+<style>
+    .result-wrapper { max-width: 800px; margin: 40px auto; padding: 20px; color: #c9d1d9; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .title { font-size: 24px; font-weight: bold; color: #238636; margin-bottom: 10px; }
+    .label { color: #8b949e; font-size: 14px; margin-bottom: 5px; }
+    .score { font-size: 40px; font-weight: 800; color: #2ea043; }
+    .risk-badge { display: inline-block; padding: 5px 12px; border-radius: 20px; font-weight: bold; }
+    .risk-high { background: #442326; color: #ff7b72; }
+    .risk-low { background: #23392b; color: #7ee787; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="result-wrapper">
+    <div class="card">
+        <div class="title">분석 완료</div>
+        <div class="label">입력하신 아이디어:</div>
+        <p style="font-size: 18px;">{{ idea }}</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="card" style="text-align: center;">
+            <div class="label">유사도 점수</div>
+            <div class="score">{{ result.similarity.score }}%</div>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div class="label">침해 리스크</div>
+            <div class="risk-badge {% if result.infringement.risk_level == '높음' %}risk-high{% else %}risk-low{% endif %}" style="margin-top: 15px;">
+                {{ result.infringement.risk_level }}
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="label">AI 회피 전략 제언</div>
+        <p style="line-height: 1.6;">{{ result.avoidance.summary }}</p>
+    </div>
+
+    <a href="{% url 'home' %}" style="display: block; text-align: center; color: #8b949e; text-decoration: none;">← 처음으로 돌아가기</a>
+</div>
+{% endblock %}

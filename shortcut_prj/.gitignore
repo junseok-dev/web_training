@@ -1,0 +1,22 @@
+# 환경 변수 및 API 키 (가장 중요!)
+.env
+*.env
+
+# 파이썬 가상환경
+venv/
+env/
+.venv/
+bin/
+lib/
+share/
+
+# 파이썬 캐시 파일
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 스트림릿 설정 및 캐시
+.streamlit/
+
+# 데이터 
+data/
