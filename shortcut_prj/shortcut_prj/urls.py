@@ -42,3 +42,4 @@ urlpatterns = [
     # 'app.urls' 파일에 작성된 경로들을 따르도록 설정합니다.
     path('', include('app.urls')),
 ]
+

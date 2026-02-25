@@ -1,192 +1,38 @@
 {% extends 'app/base.html' %}
-
-{% block extra_head %}
-<style>
-    .chat-wrapper {
-        max-width: 850px;
-        margin: 0 auto;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    .chat-display {
-        flex: 1;
-        padding: 40px 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .message {
-        display: flex;
-        gap: 20px;
-        animation: fadeIn 0.4s ease;
-    }
-
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    .bot-icon {
-        width: 36px;
-        height: 36px;
-        background: var(--accent-green);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .message-bubble {
-        line-height: 1.6;
-        font-size: 16px;
-        max-width: 85%;
-    }
-
-    .input-wrapper {
-        padding: 20px 20px 40px;
-        background: linear-gradient(transparent, var(--bg-dark) 30%);
-    }
-
-    .input-container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: #21262d;
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        padding: 12px 16px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    textarea {
-        width: 100%;
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 16px;
-        resize: none;
-        outline: none;
-        min-height: 24px;
-        max-height: 200px;
-    }
-
-    .input-footer {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 10px;
-    }
-
-    .submit-btn {
-        background: var(--accent-green);
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: opacity 0.2s;
-    }
-
-    .submit-btn:disabled {
-        background: #234d2c;
-        color: #8b949e;
-        cursor: not-allowed;
-    }
-
-    /* Loading Animation */
-    .typing-indicator {
-        display: flex;
-        gap: 5px;
-        margin-top: 10px;
-    }
-    .dot { width: 8px; height: 8px; background: #8b949e; border-radius: 50%; animation: bounce 1.4s infinite; }
-    .dot:nth-child(2) { animation-delay: 0.2s; }
-    .dot:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes bounce { 0%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-8px); } }
-</style>
-{% endblock %}
-
 {% block content %}
-<div class="chat-wrapper">
-    <div class="chat-display" id="chatDisplay">
-        <div class="message">
-            <div class="bot-icon"><i class="fas fa-robot"></i></div>
-            <div class="message-bubble">
-                <h2 style="margin-top: 0; font-size: 24px;">반갑습니다! 어떤 아이디어를 분석해 드릴까요?</h2>
-                <p style="color: var(--text-muted);">Short-Cut은 전 세계 특허 데이터를 실시간으로 조회하여 유사도와 침해 리스크를 진단합니다.</p>
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; height: calc(100vh - 45px); display: flex; flex-direction: column;">
+    <div id="chatDisplay" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-bottom: 15px;">
+        <div style="display: flex; gap: 10px;">
+            <div style="width: 30px; height: 30px; background: var(--card-bg); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--accent-blue); flex-shrink: 0;"><i class="fas fa-bolt" style="font-size: 12px;"></i></div>
+            <div style="background: var(--card-bg); padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border-color); font-size: 13px; line-height: 1.5; color: var(--text-main);">
+                안녕하세요! <strong>Short-Cut AI</strong>입니다. <br> 분석할 특허 아이디어를 아래에 입력해주세요.
             </div>
         </div>
     </div>
-
-    <div class="input-wrapper">
-        <form action="{% url 'analyze' %}" method="post" id="analyzeForm">
-            {% csrf_token %}
-            <div class="input-container">
-                <textarea name="idea" id="ideaInput" rows="1" placeholder="아이디어의 핵심 기술과 목적을 입력하세요..." required></textarea>
-                <div class="input-footer">
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        <i class="fas fa-arrow-up"></i> 분석 시작
-                    </button>
-                </div>
-            </div>
-        </form>
-        <p style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 15px;">
-            AI가 생성한 정보는 부정확할 수 있으므로 전문가의 검토가 필요합니다.
-        </p>
-    </div>
+    
+    <form method="post" action="{% url 'analyze' %}" id="analysisForm" style="margin-bottom: 5px;">
+        {% csrf_token %}
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 6px 10px; display: flex; gap: 8px; align-items: center;">
+            <textarea name="idea" id="ideaInput" style="flex: 1; background: none; border: none; color: white; padding: 5px; outline: none; height: 40px; font-size: 13px; resize: none; font-family: inherit;" placeholder="아이디어를 설명해주세요..." required></textarea>
+            <button type="submit" id="submitBtn" style="background: var(--accent-blue); border: none; border-radius: 8px; width: 36px; height: 36px; cursor: pointer; flex-shrink: 0;"><i class="fas fa-arrow-up" style="color: #000;"></i></button>
+        </div>
+        <p style="font-size: 10px; color: var(--text-muted); text-align: center; margin-top: 8px; opacity: 0.7;">AI 결과는 참고용이며 법적 효력이 없습니다.</p>
+    </form>
 </div>
 
 <script>
-    const textarea = document.getElementById('ideaInput');
-    const form = document.getElementById('analyzeForm');
-    const chatDisplay = document.getElementById('chatDisplay');
-
-    // 텍스트 영역 자동 높이 조절
-    textarea.addEventListener('input', function() {
-        this.style.height = 'auto';
-        this.style.height = (this.scrollHeight) + 'px';
-    });
-
-    // 엔터키 전송 (Shift+Enter는 줄바꿈)
-    textarea.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' && !e.shiftKey) {
-            e.preventDefault();
-            if(this.value.trim()) form.submit();
-        }
-    });
-
-    // 폼 제출 시 로딩 효과
+    const form = document.getElementById('analysisForm');
     form.onsubmit = function() {
         document.getElementById('submitBtn').disabled = true;
-        const userMsg = textarea.value;
-        
-        // 사용자의 메시지 화면에 추가
-        const userHtml = `
-            <div class="message" style="justify-content: flex-end;">
-                <div class="message-bubble" style="background: #238636; padding: 12px 18px; border-radius: 18px; border-bottom-right-radius: 4px;">
-                    ${userMsg}
-                </div>
-            </div>
-        `;
-        
-        // 로딩 애니메이션 추가
-        const loadingHtml = `
-            <div class="message" id="loader">
-                <div class="bot-icon"><i class="fas fa-robot"></i></div>
-                <div class="message-bubble">
-                    아이디어를 검토 중입니다. 유사 특허를 검색하고 있습니다...
-                    <div class="typing-indicator">
-                        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-                    </div>
-                </div>
-            </div>
-        `;
-        
-        chatDisplay.insertAdjacentHTML('beforeend', userHtml);
-        chatDisplay.insertAdjacentHTML('beforeend', loadingHtml);
-        window.scrollTo(0, document.body.scrollHeight);
+        const chatDisplay = document.getElementById('chatDisplay');
+        const loaderHtml = `
+            <div id="loader" style="color: var(--accent-blue); font-size: 12px; font-weight: 600; padding-left: 40px; margin-top: 5px; animation: pulse 1.5s infinite;">
+                특허 데이터베이스 실시간 검색 중...
+            </div>`;
+        chatDisplay.insertAdjacentHTML('beforeend', loaderHtml);
+        chatDisplay.scrollTop = chatDisplay.scrollHeight;
+        return true;
     };
 </script>
+<style>@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }</style>
 {% endblock %}

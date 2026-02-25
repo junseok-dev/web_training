@@ -3,194 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short-Cut | Patent AI</title>
+    <title>Short-Cut | AI Patent Analysis</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* [전역 설정] 100% 배율 최적화 및 스크롤 방지 */
+        * { box-sizing: border-box; }
         :root {
-            --sidebar-width: 280px;
-            --bg-dark: #0d1117;
-            --sidebar-bg: #161b22;
-            --card-bg: #21262d;
-            --accent-green: #238636;
-            --border-color: #30363d;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
+            --sidebar-width: 240px;
+            --bg-dark: #090c10; --sidebar-bg: #010409; --accent-blue: #00d4ff;
+            --card-bg: #161b22; --border-color: #30363d; --text-main: #e6edf3; --text-muted: #8b949e;
         }
-
-        body {
-            margin: 0;
-            font-family: 'Pretendard', -apple-system, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
+        body { 
+            margin: 0; font-family: 'Pretendard', sans-serif; 
+            background: var(--bg-dark); color: var(--text-main); 
+            display: flex; height: 100vh; overflow: hidden; 
         }
+        
+        .sidebar { width: var(--sidebar-width); background: var(--sidebar-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; flex-shrink: 0; }
+        .sidebar-header { padding: 18px 20px; font-size: 20px; font-weight: 800; color: var(--accent-blue); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .new-chat-btn { margin: 0 12px 12px; padding: 10px; border: 1px solid var(--accent-blue); border-radius: 10px; text-align: center; text-decoration: none; color: var(--accent-blue); font-weight: 600; font-size: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; }
+        .new-chat-btn:hover { background: rgba(0, 212, 255, 0.1); }
+        
+        .history-section { flex: 1; overflow-y: auto; padding: 0 10px; }
+        .history-title { font-size: 10px; color: var(--text-muted); margin-bottom: 8px; padding-left: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .history-item { padding: 8px 10px; border-radius: 6px; font-size: 12px; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 8px; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .history-item:hover { background: var(--card-bg); color: var(--accent-blue); }
+        
+        .main-container { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+        header { height: 45px; display: flex; align-items: center; justify-content: flex-end; padding: 0 20px; border-bottom: 1px solid var(--border-color); }
+        .content-area { flex: 1; overflow-y: auto; }
+        .auth-link { color: var(--text-main); text-decoration: none; font-size: 12px; margin-left: 15px; }
 
-        /* --- Sidebar Style --- */
-        .sidebar {
-            width: var(--sidebar-width);
-            background-color: var(--sidebar-bg);
-            border-right: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s;
-        }
-
-        .sidebar-header {
-            padding: 24px;
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--accent-green);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .new-chat-btn {
-            margin: 0 15px 20px;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: background 0.2s;
-        }
-
-        .new-chat-btn:hover { background: #30363d; }
-
-        .history-section {
-            flex: 1;
-            overflow-y: auto;
-            padding: 0 15px;
-        }
-
-        .history-title {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            padding-left: 5px;
-        }
-
-        .history-item {
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 13px;
-            color: var(--text-main);
-            text-decoration: none;
-            display: block;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin-bottom: 5px;
-        }
-
-        .history-item:hover { background: var(--card-bg); }
-
-        .sidebar-footer {
-            padding: 20px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-        }
-
-        /* --- Main Content Style --- */
-        .main-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        header {
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 0 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .content-area {
-            flex: 1;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .auth-link {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 14px;
-            margin-left: 15px;
-        }
-
-        .auth-link:hover { color: var(--accent-green); }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #484f58; border-radius: 10px; }
+        #toast { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); z-index: 9999; animation: slideDown 0.4s ease; }
+        @keyframes slideDown { from { top: -50px; opacity: 0; } to { top: 15px; opacity: 1; } }
     </style>
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <i class="fas fa-bolt"></i> Short-Cut
+    {% if messages %}
+        <div id="toast">
+            {% for message in messages %}
+                <div style="background: var(--accent-blue); color: #000; padding: 10px 18px; border-radius: 8px; font-weight: 800; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 10px; font-size: 13px;">
+                    <i class="fas fa-check-circle"></i> <span>{{ message }}</span>
+                </div>
+            {% endfor %}
         </div>
-        
-        <a href="{% url 'home' %}" class="new-chat-btn">
-            <i class="fas fa-plus"></i> 새 분석 시작
-        </a>
+        <script>setTimeout(() => { document.getElementById('toast').style.display='none'; }, 2500);</script>
+    {% endif %}
 
+    <aside class="sidebar">
+        <a href="{% url 'home' %}" class="sidebar-header"><i class="fas fa-bolt"></i> Short-Cut</a>
+        <a href="{% url 'home' %}" class="new-chat-btn"><i class="fas fa-plus"></i> 새 분석 시작</a>
         <div class="history-section">
-            <div class="history-title">최근 분석 기록</div>
+            <div class="history-title">Recent History</div>
             {% if history %}
                 {% for item in history %}
-                    <a href="#" class="history-item"><i class="far fa-comment-alt"></i> {{ item.idea_summary }}</a>
+                    <a href="{% url 'analysis_detail' item.pk %}" class="history-item">
+                        <i class="far fa-comment-alt" style="opacity: 0.5; font-size: 11px;"></i> {{ item.idea|truncatechars:15 }}
+                    </a>
                 {% endfor %}
             {% else %}
-                <div style="font-size: 12px; color: var(--text-muted); padding-left: 5px;">기록이 없습니다.</div>
+                <div style="font-size: 11px; color: var(--text-muted); padding-left: 10px;">기록이 없습니다.</div>
             {% endif %}
         </div>
+        
+        <div style="padding: 10px 12px;">
+            <a href="/static/files/지식재산권용어사전_편집본_v16.pdf" download class="history-item" style="border: 1px solid var(--border-color); background: rgba(255,255,255,0.05);">
+                <i class="fas fa-book"></i> IP 용어사전 받기
+            </a>
+        </div>
 
-        <div class="sidebar-footer">
+        <div style="padding: 15px; border-top: 1px solid var(--border-color);">
             {% if user.is_authenticated %}
-                <div class="user-info">
-                    <i class="fas fa-user-circle" style="font-size: 20px;"></i>
-                    <span>{{ user.username }}님</span>
-                    <a href="{% url 'logout' %}" class="auth-link" style="color: #f85149;"><i class="fas fa-sign-out-alt"></i></a>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 12px; font-weight: 600;">{{ user.username }}님</span>
+                    <a href="{% url 'logout' %}" style="color: #ff7b72; font-size: 14px;"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
             {% else %}
-                <a href="{% url 'login' %}" class="menu-item auth-link"><i class="fas fa-sign-in-alt"></i> 로그인 하세요</a>
+                <a href="{% url 'login' %}" class="auth-link" style="margin-left:0; font-size: 12px;"><i class="fas fa-sign-in-alt"></i> 로그인</a>
             {% endif %}
         </div>
-    </div>
+    </aside>
 
-    <div class="main-container">
+    <main class="main-container">
         <header>
-            {% if not user.is_authenticated %}
-                <a href="{% url 'signup' %}" class="auth-link">회원가입</a>
-                <a href="{% url 'login' %}" class="auth-link">로그인</a>
-            {% endif %}
+            {% if not user.is_authenticated %}<a href="{% url 'signup' %}" class="auth-link">회원가입</a>{% endif %}
         </header>
-
-        <div class="content-area">
-            {% block content %}{% endblock %}
-        </div>
-    </div>
-
+        <div class="content-area">{% block content %}{% endblock %}</div>
+    </main>
 </body>
 </html>

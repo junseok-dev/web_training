@@ -29,3 +29,6 @@ spacy>=3.7.0
 
 # 5. Async Support (Django-Async 호환)
 asyncio
+
+# 용어 사전 다운로드에 필요한 패키지
+xhtml2pdf

@@ -1,112 +1,30 @@
 {% extends 'app/base.html' %}
-
-{% block extra_head %}
-<style>
-    .signup-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: calc(100vh - 100px);
-    }
-    .signup-card {
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        padding: 40px;
-        border-radius: 20px;
-        width: 100%;
-        max-width: 450px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-    .signup-title {
-        font-size: 28px;
-        font-weight: 800;
-        margin-bottom: 10px;
-        text-align: center;
-        background: linear-gradient(135deg, #7ee787, #2ea043);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .signup-subtitle {
-        color: var(--text-muted);
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 14px;
-    }
-    /* 장고 폼 스타일링 */
-    form p {
-        margin-bottom: 20px;
-    }
-    form label {
-        display: block;
-        margin-bottom: 8px;
-        font-size: 14px;
-        color: #c9d1d9;
-    }
-    form input {
-        width: 100%;
-        padding: 12px;
-        background: #0d1117;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        color: white;
-        transition: border-color 0.2s;
-    }
-    form input:focus {
-        border-color: var(--accent-green);
-        outline: none;
-    }
-    .helptext, .errorlist {
-        font-size: 12px;
-        color: #8b949e;
-        margin-top: 5px;
-        list-style: none;
-        padding-left: 0;
-    }
-    .errorlist { color: #ff7b72; }
-
-    .submit-btn {
-        width: 100%;
-        padding: 14px;
-        background: var(--accent-green);
-        border: none;
-        border-radius: 8px;
-        color: #0d1117;
-        font-weight: 700;
-        cursor: pointer;
-        margin-top: 10px;
-        transition: transform 0.2s;
-    }
-    .submit-btn:hover {
-        transform: translateY(-2px);
-        background: #2ea043;
-    }
-    .login-link {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 14px;
-        color: var(--text-muted);
-    }
-    .login-link a {
-        color: var(--accent-green);
-        text-decoration: none;
-    }
-</style>
-{% endblock %}
-
 {% block content %}
-<div class="signup-wrapper">
-    <div class="signup-card">
-        <div class="signup-title">Create Account</div>
-        <div class="signup-subtitle">새로운 서비스를 시작하기 위해 계정을 생성하세요.</div>
+<div style="display: flex; justify-content: center; align-items: center; height: 100%; background: #090c10;">
+    <div style="width: 100%; max-width: 450px; padding: 40px; background: #161b22; border-radius: 24px; border: 1px solid #30363d; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+        <div style="text-align: center; margin-bottom: 35px;">
+            <i class="fas fa-user-plus" style="font-size: 44px; color: var(--accent-blue); margin-bottom: 20px;"></i>
+            <h2 style="color: #fff; font-size: 26px; font-weight: 800;">Short-Cut 회원가입</h2>
+            <p style="color: var(--text-muted); font-size: 14px;">하나의 계정으로 모든 특허 분석 기능을 사용하세요.</p>
+        </div>
         
-        <form method="post">
+        <form method="post" id="signupForm">
             {% csrf_token %}
+            <style>
+                .helptext { display: block; font-size: 11px; color: var(--text-muted); margin-top: 5px; margin-bottom: 15px; }
+                label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+                input { width: 100%; padding: 14px; background: #0d1117; border: 1px solid #30363d; border-radius: 12px; color: white; margin-bottom: 5px; box-sizing: border-box; transition: 0.3s; }
+                input:focus { outline: none; border-color: var(--accent-blue); box-shadow: 0 0 10px rgba(0, 212, 255, 0.2); }
+                ul { list-style: none; padding: 0; color: #ff7b72; font-size: 12px; margin-bottom: 20px; }
+            </style>
             {{ form.as_p }}
-            <button type="submit" class="submit-btn">가입 완료</button>
+            <button type="submit" style="width: 100%; padding: 16px; background: var(--accent-blue); color: #000; border: none; border-radius: 12px; font-weight: 800; font-size: 16px; cursor: pointer; margin-top: 10px; transition: 0.2s;">
+                회원가입 완료
+            </button>
         </form>
 
-        <div class="login-link">
-            이미 계정이 있으신가요? <a href="{% url 'login' %}">로그인하기</a>
+        <div style="text-align: center; margin-top: 30px; font-size: 14px; color: var(--text-muted);">
+            이미 계정이 있으신가요? <a href="{% url 'login' %}" style="color: var(--accent-blue); font-weight: 600; text-decoration: none;">로그인</a>
         </div>
     </div>
 </div>
