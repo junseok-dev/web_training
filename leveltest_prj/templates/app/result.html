@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}테스트 결과{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <div class="quiz-card">
+            <h1 class="display-4 mb-3">📊 분석 결과</h1>
+            <h3 class="text-info">{{ score }} / {{ total }} 정답</h3>
+            <p class="lead">소요 시간: {{ time }}초</p>
+        </div>
+
+        <div class="quiz-card text-start">
+            <h4 class="mb-3">🤖 AI 멘토의 총평</h4>
+            <div class="p-3 border border-secondary rounded bg-dark">
+                {{ analysis|linebreaks }}
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="{% url 'quiz:setup' %}" class="btn btn-outline-light">다시 테스트하기</a>
+            {% if user.is_authenticated %}
+            <a href="#" class="btn btn-primary">나의 기록 보기</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

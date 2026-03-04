@@ -1,38 +1,169 @@
-{% extends 'app/base.html' %}
-{% block content %}
-<div style="max-width: 800px; margin: 0 auto; padding: 20px; height: calc(100vh - 45px); display: flex; flex-direction: column;">
-    <div id="chatDisplay" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-bottom: 15px;">
-        <div style="display: flex; gap: 10px;">
-            <div style="width: 30px; height: 30px; background: var(--card-bg); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--accent-blue); flex-shrink: 0;"><i class="fas fa-bolt" style="font-size: 12px;"></i></div>
-            <div style="background: var(--card-bg); padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border-color); font-size: 13px; line-height: 1.5; color: var(--text-main);">
-                안녕하세요! <strong>Short-Cut AI</strong>입니다. <br> 분석할 특허 아이디어를 아래에 입력해주세요.
-            </div>
-        </div>
+{% extends 'app/base.html' %} {% block content %}
+<div
+  style="
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    height: calc(100vh - 45px);
+    display: flex;
+    flex-direction: column;
+  "
+>
+  <div
+    id="chatDisplay"
+    style="
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-bottom: 15px;
+    "
+  >
+    <div style="display: flex; gap: 10px">
+      <div
+        style="
+          width: 30px;
+          height: 30px;
+          background: var(--card-bg);
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--accent-blue);
+          flex-shrink: 0;
+        "
+      >
+        <i class="fas fa-bolt" style="font-size: 12px"></i>
+      </div>
+      <div
+        style="
+          background: var(--card-bg);
+          padding: 10px 14px;
+          border-radius: 12px;
+          border: 1px solid var(--border-color);
+          font-size: 13px;
+          line-height: 1.5;
+          color: var(--text-main);
+        "
+      >
+        안녕하세요! <strong>Short-Cut AI</strong>입니다. <br />
+        분석할 특허 아이디어를 아래에 입력해주세요.
+      </div>
     </div>
-    
-    <form method="post" action="{% url 'analyze' %}" id="analysisForm" style="margin-bottom: 5px;">
-        {% csrf_token %}
-        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 6px 10px; display: flex; gap: 8px; align-items: center;">
-            <textarea name="idea" id="ideaInput" style="flex: 1; background: none; border: none; color: white; padding: 5px; outline: none; height: 40px; font-size: 13px; resize: none; font-family: inherit;" placeholder="아이디어를 설명해주세요..." required></textarea>
-            <button type="submit" id="submitBtn" style="background: var(--accent-blue); border: none; border-radius: 8px; width: 36px; height: 36px; cursor: pointer; flex-shrink: 0;"><i class="fas fa-arrow-up" style="color: #000;"></i></button>
-        </div>
-        <p style="font-size: 10px; color: var(--text-muted); text-align: center; margin-top: 8px; opacity: 0.7;">AI 결과는 참고용이며 법적 효력이 없습니다.</p>
-    </form>
+  </div>
+
+  <form
+    method="post"
+    action="{% url 'analyze' %}"
+    id="analysisForm"
+    style="margin-bottom: 5px"
+  >
+    {% csrf_token %}
+    <div
+      style="
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 6px 10px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      "
+    >
+      <textarea
+        name="idea"
+        id="ideaInput"
+        style="
+          flex: 1;
+          background: none;
+          border: none;
+          color: white;
+          padding: 5px;
+          outline: none;
+          height: 40px;
+          font-size: 13px;
+          resize: none;
+          font-family: inherit;
+        "
+        placeholder="아이디어를 설명해주세요..."
+        required
+      ></textarea>
+      <button
+        type="submit"
+        id="submitBtn"
+        style="
+          background: var(--accent-blue);
+          border: none;
+          border-radius: 8px;
+          width: 36px;
+          height: 36px;
+          cursor: pointer;
+          flex-shrink: 0;
+        "
+      >
+        <i class="fas fa-arrow-up" style="color: #000"></i>
+      </button>
+    </div>
+    <p
+      style="
+        font-size: 10px;
+        color: var(--text-muted);
+        text-align: center;
+        margin-top: 8px;
+        opacity: 0.7;
+      "
+    >
+      AI 결과는 참고용이며 법적 효력이 없습니다.
+    </p>
+  </form>
 </div>
 
 <script>
-    const form = document.getElementById('analysisForm');
-    form.onsubmit = function() {
-        document.getElementById('submitBtn').disabled = true;
-        const chatDisplay = document.getElementById('chatDisplay');
-        const loaderHtml = `
+  const form = document.getElementById("analysisForm");
+  const ideaInput = document.getElementById("ideaInput");
+
+  // Textarea Enter 키 처리
+  // Shift+Enter: 제출
+  // Enter: 줄바꿈
+  // Enter: 폼 제출 (일반 채팅처럼)
+  // Shift+Enter: 줄바꿈
+  ideaInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      if (e.shiftKey) {
+        // Shift+Enter: 줄바꿈 (기본 동작)
+        return true;
+      } else {
+        // Enter: 폼 제출
+        e.preventDefault();
+        form.submit();
+      }
+    }
+  });
+
+  form.onsubmit = function () {
+    document.getElementById("submitBtn").disabled = true;
+    const chatDisplay = document.getElementById("chatDisplay");
+    const loaderHtml = `
             <div id="loader" style="color: var(--accent-blue); font-size: 12px; font-weight: 600; padding-left: 40px; margin-top: 5px; animation: pulse 1.5s infinite;">
                 특허 데이터베이스 실시간 검색 중...
             </div>`;
-        chatDisplay.insertAdjacentHTML('beforeend', loaderHtml);
-        chatDisplay.scrollTop = chatDisplay.scrollHeight;
-        return true;
-    };
+    chatDisplay.insertAdjacentHTML("beforeend", loaderHtml);
+    chatDisplay.scrollTop = chatDisplay.scrollHeight;
+    return true;
+  };
 </script>
-<style>@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }</style>
+<style>
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+</style>
 {% endblock %}

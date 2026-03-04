@@ -1,0 +1,50 @@
+/* static/css/style.css */
+:root {
+    --primary-color: #007bff;
+    --bg-dark: #1e1e2e;
+    --card-bg: #2b2b3b;
+    --text-white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Pretendard', -apple-system, sans-serif;
+}
+
+.navbar {
+    border-bottom: 1px solid #444;
+}
+
+.quiz-card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 25px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.option-item {
+    background: #3a3a4c;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option-item:hover {
+    background: #4a4a5c;
+}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card bg-secondary text-white p-4">
+    <h2>🚀 AI IT 역량 테스트 ({{ request.session.category|default:"준비" }})</h2>
+    <form method="post" action="{% url 'app:test' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">종목 선택</label>
+            <select name="category" class="form-select">
+                <option value="Python">Python</option>
+                <option value="SQL">SQL</option>
+                <option value="Django">Django</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">테스트 시작</button>
+    </form>
+    {% if error %}<div class="alert alert-danger mt-3">{{ error }}</div>{% endif %}
+</div>
+{% endblock %}

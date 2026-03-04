@@ -25,4 +25,5 @@ urlpatterns = [
     
     # ''은 주소창에 아무것도 안 쳤을 때(홈) app의 urls.py를 보겠다는 뜻입니다.
     path('', include('app.urls')), 
+    path('', include('app.urls')),
 ]

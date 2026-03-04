@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ request.session.category }} 테스트 중{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="mb-4">📝 {{ request.session.category }} Level Test</h2>
+        <form method="post" action="{% url 'quiz:result' %}">
+            {% csrf_token %}
+            {% for q in questions %}
+            <div class="quiz-card mb-4">
+                <h5 class="mb-3">Q{{ forloop.counter }}. {{ q.question }}</h5>
+                <hr style="border-color: #444;">
+                <div class="options">
+                    {% for option in q.options %}
+                    <div class="form-check option-item">
+                        <input class="form-check-input" type="radio" name="ans_{{ forloop.parentloop.counter0 }}" 
+                               id="q{{ forloop.parentloop.counter0 }}_{{ forloop.counter0 }}" value="{{ forloop.counter0 }}" required>
+                        <label class="form-check-label w-100" for="q{{ forloop.parentloop.counter0 }}_{{ forloop.counter0 }}">
+                            {{ option }}
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+            
+            <div class="text-center mt-4 mb-5">
+                <button type="submit" class="btn btn-primary btn-lg">최종 제출 및 결과 확인</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
